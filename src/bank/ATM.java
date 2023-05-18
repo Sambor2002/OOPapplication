@@ -3,12 +3,12 @@ package bank;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class ATMcontroler {
+public class ATM {
 
     private final Bank bank;
     private AccountData accountData = null;
 
-    public ATMcontroler(Bank bank) {
+    public ATM(Bank bank) {
         this.bank = bank;
     }
 
