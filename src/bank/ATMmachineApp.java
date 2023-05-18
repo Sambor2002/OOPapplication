@@ -21,17 +21,45 @@ public class ATMmachineApp extends Application {
     }
 
     private TextField field = new TextField();
+    private ATM ATM = new ATM(new Bank());
 
     private Parent createContent() {
-        VBox vbox = new VBox();
+        VBox vbox = new VBox(21);
         vbox.setPrefSize(600, 600);
 
-        Button btnSubmit = new Button("Submit");
-        Button btnDeposit = new Button("Deposit");
-        Button btnWithdraw = new Button("Withdraw");
-        Button btnExit = new Button("Exit");
-
         TextArea areaInfo = new TextArea();
+
+        Button btnSubmit = new Button("Submit");
+        btnSubmit.setOnAction(e ->{
+            int id =Integer.parseInt(field.getText());
+            ATM.login(id);
+
+            areaInfo.setText(ATM.toString());
+        });
+
+        Button btnDeposit = new Button("Deposit");
+        btnDeposit.setOnAction(e ->{
+            int amount = Integer.parseInt(field.getText());
+            ATM.deposit(amount);
+
+            areaInfo.setText(ATM.toString());
+        });
+
+        Button btnWithdraw = new Button("Withdraw");
+        btnWithdraw.setOnAction(e ->{
+            int amount =Integer.parseInt(field.getText());
+            ATM.withdraw(amount);
+
+            areaInfo.setText(ATM.toString());
+        });
+
+        Button btnExit = new Button("Exit");
+        btnExit.setOnAction(e ->{
+            ATM.exit();
+
+            areaInfo.setText(ATM.toString());
+        });
+
 
         vbox.getChildren().addAll(field, btnSubmit, btnDeposit, btnWithdraw, btnExit, areaInfo);
         return vbox;
