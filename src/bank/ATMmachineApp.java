@@ -6,7 +6,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 
@@ -30,6 +33,7 @@ public class ATMmachineApp extends Application {
         Button btnSubmit = new Button("Submit");
         btnSubmit.setPrefHeight(93.0);
         btnSubmit.setPrefWidth(600.0);
+        btnSubmit.setFont(Font.font("Lucida Sans Unicode",21));
         btnSubmit.setOnAction(e ->{
             int id =Integer.parseInt(field.getText());
             ATM.login(id);
@@ -40,6 +44,8 @@ public class ATMmachineApp extends Application {
         Button btnDeposit = new Button("Deposit");
         btnDeposit.setPrefHeight(93.0);
         btnDeposit.setPrefWidth(600.0);
+        btnDeposit.setBackground(Background.fill(Color.GREEN));
+        btnDeposit.setFont(Font.font("Lucida Sans Unicode",21));
         btnDeposit.setOnAction(e ->{
             int amount = Integer.parseInt(field.getText());
             ATM.deposit(amount);
@@ -50,6 +56,8 @@ public class ATMmachineApp extends Application {
         Button btnWithdraw = new Button("Withdraw");
         btnWithdraw.setPrefHeight(93.0);
         btnWithdraw.setPrefWidth(600.0);
+        btnWithdraw.setBackground(Background.fill(Color.RED));
+        btnWithdraw.setFont(Font.font("Lucida Sans Unicode",21));
         btnWithdraw.setOnAction(e ->{
             int amount =Integer.parseInt(field.getText());
             ATM.withdraw(amount);
@@ -60,6 +68,7 @@ public class ATMmachineApp extends Application {
         Button btnExit = new Button("Exit");
         btnExit.setPrefHeight(93.0);
         btnExit.setPrefWidth(600.0);
+        btnExit.setFont(Font.font("Lucida Sans Unicode",21));
         btnExit.setOnAction(e ->{
             ATM.exit();
 
