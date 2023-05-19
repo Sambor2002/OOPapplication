@@ -10,8 +10,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
-
-
 public class ATMmachineApp extends Application {
 
     @Override
@@ -24,12 +22,14 @@ public class ATMmachineApp extends Application {
     private ATM ATM = new ATM(new Bank());
 
     private Parent createContent() {
-        VBox vbox = new VBox(21);
+        VBox vbox = new VBox();
         vbox.setPrefSize(600, 600);
 
         TextArea areaInfo = new TextArea();
 
         Button btnSubmit = new Button("Submit");
+        btnSubmit.setPrefHeight(93.0);
+        btnSubmit.setPrefWidth(600.0);
         btnSubmit.setOnAction(e ->{
             int id =Integer.parseInt(field.getText());
             ATM.login(id);
@@ -38,6 +38,8 @@ public class ATMmachineApp extends Application {
         });
 
         Button btnDeposit = new Button("Deposit");
+        btnDeposit.setPrefHeight(93.0);
+        btnDeposit.setPrefWidth(600.0);
         btnDeposit.setOnAction(e ->{
             int amount = Integer.parseInt(field.getText());
             ATM.deposit(amount);
@@ -46,6 +48,8 @@ public class ATMmachineApp extends Application {
         });
 
         Button btnWithdraw = new Button("Withdraw");
+        btnWithdraw.setPrefHeight(93.0);
+        btnWithdraw.setPrefWidth(600.0);
         btnWithdraw.setOnAction(e ->{
             int amount =Integer.parseInt(field.getText());
             ATM.withdraw(amount);
@@ -54,6 +58,8 @@ public class ATMmachineApp extends Application {
         });
 
         Button btnExit = new Button("Exit");
+        btnExit.setPrefHeight(93.0);
+        btnExit.setPrefWidth(600.0);
         btnExit.setOnAction(e ->{
             ATM.exit();
 
