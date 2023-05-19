@@ -47,7 +47,7 @@ public class ATM {
 
     @Override
     public String toString() {
-        return accountData != null ? accountData.toString(): "No data ";
+        return accountData != null ? accountData.toString(): "Bye ";
     }
 
     private <T> void tryCall(Supplier<ActionResult<T> > action, Consumer<T> postAction) {
