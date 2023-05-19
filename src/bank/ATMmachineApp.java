@@ -56,7 +56,7 @@ public class ATMmachineApp extends Application {
         Button btnWithdraw = new Button("Withdraw");
         btnWithdraw.setPrefHeight(93.0);
         btnWithdraw.setPrefWidth(600.0);
-        btnWithdraw.setBackground(Background.fill(Color.RED));
+        btnWithdraw.setBackground(Background.fill(Color.INDIANRED));
         btnWithdraw.setFont(Font.font("Lucida Sans Unicode",21));
         btnWithdraw.setOnAction(e ->{
             int amount =Integer.parseInt(field.getText());
